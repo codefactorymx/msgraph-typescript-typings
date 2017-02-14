@@ -50,14 +50,29 @@ export type ExternalAuthenticationType = "passthru" | "aadPreAuthentication"
 export type ConnectorStatus = "active" | "inactive"
 export type AppInstallIntent = "available" | "notApplicable" | "required" | "uninstall" | "availableWithoutEnrollment"
 export type ManagedAppAvailability = "global" | "lineOfBusiness"
+export type VolumePurchaseProgramTokenAccountType = "business" | "education"
+export type VolumePurchaseProgramTokenState = "unknown" | "valid" | "expired" | "invalid"
+export type VolumePurchaseProgramTokenSyncStatus = "none" | "inProgress" | "completed" | "failed"
 export type MdmAppConfigKeyType = "stringType" | "integerType" | "realType" | "booleanType" | "tokenType"
-export type AppConfigComplianceStatus = "unknown" | "notApplicable" | "compliant" | "remediated" | "nonCompliant" | "error" | "conflict"
+export type ComplianceStatus = "unknown" | "notApplicable" | "compliant" | "remediated" | "nonCompliant" | "error" | "conflict"
+export type DeviceConfigurationAuthority = "unknown" | "policyState" | "mtDeviceConfiguration"
+export type DeviceConfigurationVersions = "initial" | "lastModifiedDateTimeFix" | "flipApplyToWin10Fix" | "reportingFix" | "appsComplianceListFix"
 export type ITunesPairingMode = "disallow" | "allow" | "requiresCertificate"
 export type ImportedDeviceIdentityType = "unknown" | "imei" | "serialNumber"
 export type EnrollmentState = "unknown" | "enrolled" | "pendingReset" | "failed" | "notContacted"
 export type Platform = "unknown" | "ios" | "android" | "windows" | "windowsMobile" | "macOS"
 export type DiscoverySource = "unknown" | "adminImport" | "deviceEnrollmentProgram"
-export type ComplianceStatus = "unknown" | "notApplicable" | "compliant" | "remediated" | "nonCompliant" | "error" | "conflict"
+export type OwnerType = "unknown" | "company" | "personal"
+export type DeviceActionState = "none" | "pending" | "cancel" | "active" | "done" | "failed" | "notSupported"
+export type ManagementState = "managed" | "retirePending" | "retireFailed" | "wipePending" | "wipeFailed" | "unhealthy" | "deletePending" | "retireIssued" | "wipeIssued" | "wipeCanceled" | "retireCanceled" | "discovered"
+export type ChassisType = "unknown" | "desktop" | "laptop" | "worksWorkstation" | "enterpriseServer" | "phone" | "tablet" | "mobileOther" | "mobileUnknown"
+export type DeviceType = "desktop" | "windowsRT" | "winMO6" | "nokia" | "windowsPhone" | "mac" | "winCE" | "winEmbedded" | "iPhone" | "iPad" | "iPod" | "android" | "iSocConsumer" | "unix" | "macMDM" | "holoLens" | "surfaceHub" | "androidForWork" | "windowsBlue" | "windowsPhoneBlue" | "blackberry" | "palm" | "fakeDevice" | "unknown"
+export type ComplianceState = "unknown" | "compliant" | "noncompliant" | "conflict" | "error"
+export type ManagementAgentType = "eas" | "mdm" | "easMdm" | "intuneClient" | "easIntuneClient" | "configManagerClient" | "unknown"
+export type EnrollmentType = "unknown" | "userEnrollment" | "deviceEnrollment" | "deviceEnrollmentWithUDA" | "azureDomainJoined" | "userEnrollmentWithServiceAccount" | "depDeviceEnrollment" | "depDeviceEnrollmentWithUDA" | "autoEnrollment"
+export type LostModeState = "disabled" | "enabled"
+export type DeviceRegistrationState = "notRegistered" | "smsidConflict" | "registered" | "revoked" | "keyConflict" | "approvalPending" | "resetCert" | "notRegisteredPendingEnrollment" | "unknown"
+export type RemoteAction = "unknown" | "factoryReset" | "removeCompanyData" | "resetPasscode" | "remoteLock" | "enableLostMode" | "disableLostMode" | "locateDevice" | "rebootNow"
 export type SubjectNameFormat = "commonName" | "commonNameIncludingEmail" | "commonNameAsEmail"
 export type SubjectAlternativeNameType = "emailAddress" | "userPrincipalName"
 export type CertificateValidityPeriodScale = "days" | "months" | "years"
@@ -84,6 +99,7 @@ export type AndroidEapType = "eapTls" | "eapTtls" | "peap"
 export type NonEapAuthenticationMethodForEapTtlsType = "unencryptedPassword" | "challengeHandshakeAuthenticationProtocol" | "microsoftChap" | "microsoftChapVersionTwo"
 export type NonEapAuthenticationMethodForPeap = "none" | "microsoftChapVersionTwo"
 export type AppleSubjectNameFormat = "commonName" | "commonNameAsEmail" | "custom"
+export type IosNotificationAlertType = "banner" | "none" | "modalAlert"
 export type RatingAustraliaMoviesType = "allAllowed" | "allBlocked" | "general" | "parentalGuidance" | "mature" | "agesAbove15" | "agesAbove18"
 export type RatingAustraliaTelevisionType = "allAllowed" | "allBlocked" | "preschoolers" | "children" | "general" | "parentalGuidance" | "mature" | "agesAbove15" | "agesAbove15AdultViolence"
 export type RatingCanadaMoviesType = "allAllowed" | "allBlocked" | "general" | "parentalGuidance" | "agesAbove14" | "agesAbove18" | "restricted"
@@ -112,6 +128,11 @@ export type EapFastConfiguration = "noProtectedAccessCredential" | "useProtected
 export type AppleVpnConnectionType = "ciscoAnyConnect" | "pulseSecure" | "f5EdgeClient" | "dellSonicWallMobileConnect" | "checkPointCapsuleVpn" | "customVpn" | "ciscoIPSec" | "citrix"
 export type VpnOnDemandRuleConnectionAction = "connect" | "evaluateConnection" | "ignore" | "disconnect"
 export type VpnOnDemandRuleConnectionDomainAction = "connectIfNeeded" | "neverConnect"
+export type SharedPCAccountDeletionPolicyType = "immediate" | "diskSpaceThreshold" | "diskSpaceThresholdOrInactiveThreshold"
+export type SharedPCAllowedAccountType = "guest" | "domain"
+export type WindowsInformationProtectionAppRuleMode = "allow" | "exempt"
+export type WindowsInformationProtectionAppRuleDesktopVersionCondition = "andAbove" | "andBelow" | "equal"
+export type WindowsInformationProtectionEnforcementMode = "block" | "override" | "silent" | "off"
 export type CertificateDestinationStore = "computerCertStoreRoot" | "computerCertStoreIntermediate" | "userCertStoreIntermediate"
 export type WindowsDeliveryOptimizationMode = "userDefined" | "httpOnly" | "httpWithPeeringNat" | "httpWithPeeringPrivateGroup" | "httpWithInternetPeering" | "simpleDownload" | "bypassMode"
 export type PrereleaseFeatures = "userDefined" | "settingsOnly" | "settingsAndExperimentations" | "notAllowed"
@@ -140,25 +161,14 @@ export type WelcomeScreenMeetingInformation = "userDefined" | "showOrganizerAndT
 export type EditionUpgradeLicenseType = "productKey" | "licenseFile"
 export type Windows10EditionType = "windows10Enterprise" | "windows10EnterpriseN" | "windows10Education" | "windows10EducationN" | "windows10MobileEnterprise" | "windows10HolographicEnterprise"
 export type DeviceComplianceActionType = "noAction" | "notification" | "block" | "retire" | "wipe" | "removeResourceAccessProfiles"
+export type NotificationTemplateBrandingOptions = "none" | "includeCompanyLogo" | "includeCompanyName" | "includeContactInformation"
 export type DeviceThreatProtectionLevel = "none" | "low" | "medium" | "high"
 export type CloudPkiProvider = "unKnown" | "symantec"
 export type SyncStatus = "unKnown" | "succeeded" | "failed"
 export type DeviceManagementExchangeConnectorSyncType = "fullSync" | "deltaSync"
 export type MdmAuthority = "unknown" | "intune" | "sccm" | "office365"
-export type VolumePurchaseProgramTokenAccountType = "business" | "education"
-export type VolumePurchaseProgramTokenState = "unknown" | "valid" | "expired" | "invalid"
-export type VolumePurchaseProgramTokenSyncStatus = "none" | "inProgress" | "completed" | "failed"
 export type WindowsHelloForBusinessPinUsage = "allowed" | "required" | "disallowed"
 export type WindowsHelloForBusinessConfiguration = "disabled" | "enabled" | "notConfigured"
-export type OwnerType = "unknown" | "company" | "personal"
-export type DeviceActionState = "none" | "pending" | "cancel" | "active" | "done" | "failed" | "notSupported"
-export type ManagementState = "managed" | "retirePending" | "retireFailed" | "wipePending" | "wipeFailed" | "unhealthy" | "deletePending" | "retireIssued" | "wipeIssued" | "wipeCanceled" | "retireCanceled" | "discovered"
-export type ChassisType = "unknown" | "desktop" | "laptop" | "worksWorkstation" | "enterpriseServer" | "phone" | "tablet" | "mobileOther" | "mobileUnknown"
-export type DeviceType = "desktop" | "windowsRT" | "winMO6" | "nokia" | "windowsPhone" | "mac" | "winCE" | "winEmbedded" | "iPhone" | "iPad" | "iPod" | "android" | "iSocConsumer" | "unix" | "macMDM" | "holoLens" | "surfaceHub" | "androidForWork" | "windowsBlue" | "windowsPhoneBlue" | "blackberry" | "palm" | "fakeDevice" | "unknown"
-export type ComplianceState = "unknown" | "compliant" | "noncompliant" | "conflict" | "error"
-export type EnrollmentType = "unknown" | "userEnrollment" | "deviceEnrollment" | "deviceEnrollmentWithUDA" | "azureDomainJoined" | "userEnrollmentWithServiceAccount" | "depDeviceEnrollment" | "depDeviceEnrollmentWithUDA" | "autoEnrollment"
-export type LostModeState = "disabled" | "enabled"
-export type RemoteAction = "unknown" | "factoryReset" | "removeCompanyData" | "resetPasscode" | "remoteLock" | "enableLostMode" | "disableLostMode" | "locateDevice" | "rebootNow"
 export type DeviceManagementExchangeConnectorStatus = "connectionPending" | "connected" | "disconnected" | "none"
 export type DeviceManagementExchangeConnectorType = "onPremises" | "hosted" | "serviceToService" | "dedicated"
 export type DeviceManagementExchangeAccessLevel = "none" | "allow" | "block" | "quarantine"
@@ -897,6 +907,7 @@ export interface ManagedDevice extends Entity {
     complianceState?: ComplianceState
     jailBroken?: string
     managementAgents?: number
+    managementAgent?: ManagementAgentType
     osVersion?: string
     easActivated?: boolean
     easDeviceId?: string
@@ -906,6 +917,8 @@ export interface ManagedDevice extends Entity {
     lostModeState?: LostModeState
     activationLockBypassCode?: string
     emailAddress?: string
+    azureActiveDirectoryDeviceId?: string
+    deviceRegistrationState?: DeviceRegistrationState
     detectedApps?: [DetectedApp]
 }
 
@@ -1666,6 +1679,7 @@ export interface DeviceAppManagement extends Entity {
     windowsStoreForBusinessLastCompletedApplicationSyncTime?: string
     mobileApps?: [MobileApp]
     mobileAppCategories?: [MobileAppCategory]
+    appReportingOverview?: AppReportingOverviewStatus
 }
 
 export interface MobileApp extends Entity {
@@ -1691,6 +1705,13 @@ export interface MobileApp extends Entity {
 
 export interface MobileAppCategory extends Entity {
     displayName?: string
+    lastModifiedDateTime?: string
+}
+
+export interface AppReportingOverviewStatus extends Entity {
+    applicationCount?: number
+    failedApplicationCount?: number
+    appInstallFailures?: [AppInstallationFailure]
 }
 
 export interface ManagedDeviceMobileAppConfiguration extends Entity {
@@ -1713,13 +1734,18 @@ export interface MdmAppConfigGroupAssignment extends Entity {
 }
 
 export interface ManagedDeviceMobileAppConfigurationDeviceStatus extends Entity {
-    status?: AppConfigComplianceStatus
+    deviceDisplayName?: string
+    status?: ComplianceStatus
     lastReportedDateTime?: string
+    userPrincipalName?: string
 }
 
 export interface ManagedDeviceMobileAppConfigurationUserStatus extends Entity {
-    status?: AppConfigComplianceStatus
+    userDisplayName?: string
+    devicesCount?: number
+    status?: ComplianceStatus
     lastReportedDateTime?: string
+    userPrincipalName?: string
 }
 
 export interface MobileAppGroupAssignment extends Entity {
@@ -1841,6 +1867,12 @@ export interface WindowsStoreForBusinessApp extends MobileApp {
     totalLicenseCount?: number
 }
 
+export interface IosLobAppProvisioningConfiguration extends ManagedDeviceMobileAppConfiguration {
+    expiration?: string
+    payloadFileName?: string
+    payload?: number
+}
+
 export interface IosMobileAppConfiguration extends ManagedDeviceMobileAppConfiguration {
 }
 
@@ -1871,19 +1903,27 @@ export interface TermsAndConditionsAcceptanceStatus extends Entity {
 
 export interface DeviceManagement extends Entity {
     settings?: DeviceManagementSettings
+    remoteActionAudits?: [RemoteActionAudit]
     enrollmentProfiles?: [EnrollmentProfile]
     importedDeviceIdentities?: [ImportedDeviceIdentity]
     importedAppleDeviceIdentities?: [ImportedAppleDeviceIdentity]
     deviceConfigurations?: [DeviceConfiguration]
     deviceCompliancePolicies?: [DeviceCompliancePolicy]
-    remoteActionAudits?: [RemoteActionAudit]
     deviceCategories?: [DeviceCategory]
     exchangeConnectors?: [DeviceManagementExchangeConnector]
     exchangeOnPremisesPolicy?: DeviceManagementExchangeOnPremisesPolicy
+    notificationMessageTemplates?: [NotificationMessageTemplate]
     roleDefinitions?: [RoleDefinition]
     roleAssignments?: [RoleAssignment]
     resourceOperations?: [ResourceOperation]
     telecomExpenseManagementPartners?: [TelecomExpenseManagementPartner]
+}
+
+export interface RemoteActionAudit extends Entity {
+    deviceDisplayName?: string
+    userName?: string
+    action?: RemoteAction
+    requestDateTime?: string
 }
 
 export interface EnrollmentProfile extends Entity {
@@ -1926,6 +1966,7 @@ export interface DeviceConfiguration extends Entity {
     groupAssignments?: [DeviceConfigurationGroupAssignment]
     deviceStatuses?: [DeviceConfigurationDeviceStatus]
     userStatuses?: [DeviceConfigurationUserStatus]
+    deviceStatusOverview?: DeviceConfigurationDeviceOverview
 }
 
 export interface DeviceCompliancePolicy extends Entity {
@@ -1938,13 +1979,7 @@ export interface DeviceCompliancePolicy extends Entity {
     scheduledActionsForRule?: [DeviceComplianceScheduledActionForRule]
     deviceStatuses?: [DeviceComplianceDeviceStatus]
     userStatuses?: [DeviceComplianceUserStatus]
-}
-
-export interface RemoteActionAudit extends Entity {
-    deviceDisplayName?: string
-    userName?: string
-    action?: RemoteAction
-    requestDateTime?: string
+    deviceStatusOverview?: DeviceComplianceDeviceOverview
 }
 
 export interface DeviceCategory extends Entity {
@@ -1966,6 +2001,15 @@ export interface DeviceManagementExchangeOnPremisesPolicy extends Entity {
     accessRules?: [DeviceManagementExchangeAccessRule]
     knownDeviceClasses?: [DeviceManagementExchangeDeviceClass]
     conditionalAccessSettings?: OnPremisesConditionalAccessSettings
+}
+
+export interface NotificationMessageTemplate extends Entity {
+    lastModifiedDateTime?: string
+    displayName?: string
+    fromEmailAddress?: string
+    defaultLocale?: string
+    brandingOptions?: NotificationTemplateBrandingOptions
+    localizedNotificationMessages?: [LocalizedNotificationMessage]
 }
 
 export interface RoleDefinition extends Entity {
@@ -2030,6 +2074,21 @@ export interface DepEnrollmentProfile extends EnrollmentProfile {
     awaitDeviceConfiguredConfirmation?: boolean
 }
 
+export interface DetectedApp extends Entity {
+    displayName?: string
+    version?: string
+    sizeInByte?: number
+    deviceCount?: number
+    managedDevices?: [ManagedDevice]
+}
+
+export interface ManagedDeviceOverview extends Entity {
+    enrolledDeviceCount?: number
+    mdmEnrolledCount?: number
+    dualEnrolledDeviceCount?: number
+    deviceOperatingSystemSummary?: DeviceOperatingSystemSummary
+}
+
 export interface CloudPkiSubscription extends Entity {
     cloudPkiProvider?: CloudPkiProvider
     createdDateTime?: string
@@ -2053,13 +2112,27 @@ export interface DeviceConfigurationGroupAssignment extends DeviceConfigurationA
 }
 
 export interface DeviceConfigurationDeviceStatus extends Entity {
+    deviceDisplayName?: string
     status?: ComplianceStatus
     lastReportedDateTime?: string
+    userPrincipalName?: string
 }
 
 export interface DeviceConfigurationUserStatus extends Entity {
+    userDisplayName?: string
+    devicesCount?: number
     status?: ComplianceStatus
     lastReportedDateTime?: string
+    userPrincipalName?: string
+}
+
+export interface DeviceConfigurationDeviceOverview extends Entity {
+    numberOfPendingDevices?: number
+    numberOfSucceededDevices?: number
+    numberOfErrorDevices?: number
+    numberOfFailedDevices?: number
+    lastUpdateTime?: string
+    policyRevision?: number
 }
 
 export interface DeviceCompliancePolicyAssignment extends Entity {
@@ -2071,17 +2144,32 @@ export interface DeviceCompliancePolicyGroupAssignment extends DeviceComplianceP
 }
 
 export interface DeviceComplianceScheduledActionForRule extends Entity {
+    ruleName?: string
     scheduledActionConfigurations?: [DeviceComplianceActionItem]
 }
 
 export interface DeviceComplianceDeviceStatus extends Entity {
+    deviceDisplayName?: string
     status?: ComplianceStatus
     lastReportedDateTime?: string
+    userPrincipalName?: string
 }
 
 export interface DeviceComplianceUserStatus extends Entity {
+    userDisplayName?: string
+    devicesCount?: number
     status?: ComplianceStatus
     lastReportedDateTime?: string
+    userPrincipalName?: string
+}
+
+export interface DeviceComplianceDeviceOverview extends Entity {
+    numberOfPendingDevices?: number
+    numberOfSucceededDevices?: number
+    numberOfErrorDevices?: number
+    numberOfFailedDevices?: number
+    lastUpdateTime?: string
+    policyRevision?: number
 }
 
 export interface AndroidCertificateProfileBase extends DeviceConfiguration {
@@ -2261,6 +2349,14 @@ export interface IosCustomConfiguration extends DeviceConfiguration {
     payloadName?: string
     payloadFileName?: string
     payload?: number
+}
+
+export interface IosDeviceFeaturesConfiguration extends DeviceConfiguration {
+    deviceSharingAssetTagInformation?: string
+    deviceSharingLockScreenFootnote?: string
+    homeScreenLayoutDockIcons?: [IosHomeScreenItem]
+    homeScreenLayoutPages?: [IosHomeScreenPage]
+    notificationSettings?: [IosNotificationSettings]
 }
 
 export interface IosEasEmailProfileConfiguration extends DeviceConfiguration {
@@ -2537,6 +2633,47 @@ export interface Windows10EasEmailProfileConfiguration extends DeviceConfigurati
     usernameSource?: UserEmailSource
 }
 
+export interface Windows10EnterpriseModernAppManagementConfiguration extends DeviceConfiguration {
+    uninstallBuiltInApps?: boolean
+}
+
+export interface SharedPCConfiguration extends DeviceConfiguration {
+    accountManagerPolicy?: SharedPCAccountManagerPolicy
+    allowedAccounts?: SharedPCAllowedAccountType
+    allowLocalStorage?: boolean
+    disableAccountManager?: boolean
+    disableEduPolicies?: boolean
+    disablePowerPolicies?: boolean
+    disableSignInOnResume?: boolean
+    idleTimeBeforeSleepInSeconds?: number
+    kioskAppDisplayName?: string
+    kioskAppUserModelId?: string
+    maintenanceStartTime?: string
+}
+
+export interface Windows10SecureAssessmentConfiguration extends DeviceConfiguration {
+    launchUri?: string
+    configurationAccount?: string
+    blockPrinting?: boolean
+    blockScreenCapture?: boolean
+    blockTextSuggestion?: boolean
+}
+
+export interface Windows10WindowsInformationProtectionConfiguration extends DeviceConfiguration {
+    appRules?: [WindowsInformationProtectionAppRule]
+    enforcementMode?: WindowsInformationProtectionEnforcementMode
+    corporateIdentities?: [string]
+    corporateNetworkLocations?: [WindowsInformationProtectionCorporateNetworkLocation]
+    enterpriseProxyServersIsAuthoritative?: boolean
+    enterpriseIPRangesIsAuthoritative?: boolean
+    dataRecoveryCertificate?: WindowsInformationProtectionDataRecoveryCertificate
+    allowUserDecryption?: boolean
+    requireProtectionUnderLockConfiguration?: boolean
+    revokeOnUnenroll?: boolean
+    allowWindowsSearch?: boolean
+    showIcon?: boolean
+}
+
 export interface Windows81WifiImportConfiguration extends DeviceConfiguration {
     payloadFileName?: string
     profileName?: string
@@ -2798,7 +2935,10 @@ export interface Windows10GeneralConfiguration extends DeviceConfiguration {
     edgeBlockAutofill?: boolean
     edgeBlocked?: boolean
     edgeCookiePolicy?: EdgeCookiePolicy
+    edgeBlockDeveloperTools?: boolean
     edgeBlockSendingDoNotTrackHeader?: boolean
+    edgeBlockExtensions?: boolean
+    edgeBlockInPrivateBrowsing?: boolean
     edgeBlockJavaScript?: boolean
     edgeBlockPasswordManager?: boolean
     edgeBlockPopups?: boolean
@@ -2806,7 +2946,20 @@ export interface Windows10GeneralConfiguration extends DeviceConfiguration {
     edgeBlockSendingIntranetTrafficToInternetExplorer?: boolean
     edgeRequireSmartScreen?: boolean
     edgeEnterpriseModeSiteListLocation?: string
+    edgeFirstRunUrl?: string
+    edgeHomepageUrls?: [string]
+    edgeBlockAccessToAboutFlags?: boolean
+    smartScreenBlockPromptOverride?: boolean
+    smartScreenBlockPromptOverrideForFiles?: boolean
+    webRtcBlockLocalhostIpAddress?: boolean
     internetSharingBlocked?: boolean
+    settingsBlockAddProvisioningPackage?: boolean
+    settingsBlockRemoveProvisioningPackage?: boolean
+    settingsBlockChangeSystemTime?: boolean
+    settingsBlockEditDeviceName?: boolean
+    settingsBlockChangeRegion?: boolean
+    settingsBlockChangeLanguage?: boolean
+    settingsBlockChangePowerSleep?: boolean
     locationServicesBlocked?: boolean
     lockScreenBlockActionCenterNotifications?: boolean
     microsoftAccountBlocked?: boolean
@@ -2832,6 +2985,15 @@ export interface Windows10GeneralConfiguration extends DeviceConfiguration {
     wiFiBlocked?: boolean
     wiFiBlockManualConfiguration?: boolean
     windowsStoreBlocked?: boolean
+    appsAllowTrustedAppsSideloading?: StateManagementSetting
+    windowsStoreBlockAutoUpdate?: boolean
+    developerUnlockSetting?: StateManagementSetting
+    sharedUserAppDataAllowed?: boolean
+    appsBlockWindowsStoreOriginatedApps?: boolean
+    windowsStoreEnablePrivateStoreOnly?: boolean
+    storageRestrictAppDataToSystemVolume?: boolean
+    storageRestrictAppInstallToSystemVolume?: boolean
+    gameDvrBlocked?: boolean
 }
 
 export interface Windows10TeamGeneralConfiguration extends DeviceConfiguration {
@@ -2862,10 +3024,12 @@ export interface DeviceComplianceActionItem extends Entity {
     notificationMessageTemplate?: NotificationMessageTemplate
 }
 
-export interface NotificationMessageTemplate extends Entity {
-}
-
 export interface LocalizedNotificationMessage extends Entity {
+    lastModifiedDateTime?: string
+    locale?: string
+    subject?: string
+    messageTemplate?: string
+    isDefault?: boolean
 }
 
 export interface AndroidCompliancePolicy extends DeviceCompliancePolicy {
@@ -2982,21 +3146,6 @@ export interface WindowsPhone81CompliancePolicy extends DeviceCompliancePolicy {
     storageRequireEncryption?: boolean
 }
 
-export interface DetectedApp extends Entity {
-    displayName?: string
-    version?: string
-    sizeInByte?: number
-    deviceCount?: number
-    managedDevices?: [ManagedDevice]
-}
-
-export interface ManagedDeviceOverview extends Entity {
-    enrolledDeviceCount?: number
-    mdmEnrolledCount?: number
-    dualEnrolledDeviceCount?: number
-    deviceOperatingSystemSummary?: DeviceOperatingSystemSummary
-}
-
 export interface OnPremisesConditionalAccessSettings extends Entity {
     enabled?: boolean
     includedGroups?: [string]
@@ -3102,7 +3251,7 @@ export interface AndroidManagedAppRegistration extends ManagedAppRegistration {
 }
 
 export interface ManagedAppStatusRaw extends ManagedAppStatus {
-    content?: ManagedAppSummary
+    content?: any
 }
 
 export interface AddIn {
@@ -4004,6 +4153,14 @@ export interface VppLicensingType {
       supportDeviceLicensing?: boolean
 }
 
+export interface AppInstallationFailure {
+      applicationId?: string
+      appName?: string
+      platformId?: number
+      userFailures?: number
+      deviceFailures?: number
+}
+
 export interface DeviceManagementSettings {
       windowsCommercialId?: string
       windowsCommercialIdLastModifiedTime?: string
@@ -4012,6 +4169,55 @@ export interface DeviceManagementSettings {
 export interface ManagementCertificateWithThumbprint {
       thumbprint?: string
       certificate?: string
+}
+
+export interface HardwareInformation {
+      serialNumber?: string
+      totalStorageSpace?: number
+      freeStorageSpace?: number
+      imei?: string
+      meid?: string
+      manufacturer?: string
+      model?: string
+      phoneNumber?: string
+      subscriberCarrier?: string
+      cellularTechnology?: string
+      wifiMac?: string
+      operatingSystemLanguage?: string
+}
+
+export interface DeviceActionResult {
+      actionName?: string
+      actionState?: DeviceActionState
+      startDateTime?: string
+      lastUpdatedDateTime?: string
+}
+
+export interface DeviceOperatingSystemSummary {
+      androidCount?: number
+      iosCount?: number
+      macOSCount?: number
+      windowsMobileCount?: number
+      windowsCount?: number
+}
+
+export interface LocateDeviceActionResult extends DeviceActionResult {
+      deviceLocation?: DeviceGeoLocation
+}
+
+export interface DeviceGeoLocation {
+      lastCollectedDateTimeUtc?: string
+      longitude?: number
+      latitude?: number
+      altitude?: number
+      horizontalAccuracy?: number
+      verticalAccuracy?: number
+      heading?: number
+      speed?: number
+}
+
+export interface ResetPasscodeActionResult extends DeviceActionResult {
+      passcode?: string
 }
 
 export interface CloudPkiAdministratorCredentials {
@@ -4080,6 +4286,36 @@ export interface VpnServer {
       description?: string
       ipAddressOrFqdn?: string
       isDefaultServer?: boolean
+}
+
+export interface IosHomeScreenItem {
+      displayName?: string
+}
+
+export interface IosHomeScreenPage {
+      icons?: [IosHomeScreenItem]
+}
+
+export interface IosNotificationSettings {
+      bundleIdentifier?: string
+      notificationsEnabled?: boolean
+      showInNotificationCenter?: boolean
+      showInLockScreen?: boolean
+      alertType?: IosNotificationAlertType
+      badgesEnabled?: boolean
+      soundsEnabled?: boolean
+}
+
+export interface IosHomeScreenFolder extends IosHomeScreenItem {
+      pages?: [IosHomeScreenFolderPage]
+}
+
+export interface IosHomeScreenFolderPage {
+      apps?: [IosHomeScreenApp]
+}
+
+export interface IosHomeScreenApp extends IosHomeScreenItem {
+      bundleID?: string
 }
 
 export interface MediaContentRatingAustralia {
@@ -4152,6 +4388,96 @@ export interface Windows10VpnProxyServer extends VpnProxyServer {
       bypassProxyServerForLocalAddress?: boolean
 }
 
+export interface SharedPCAccountManagerPolicy {
+      accountDeletionPolicy?: SharedPCAccountDeletionPolicyType
+      cacheAccountsAboveDiskFreePercentage?: number
+      inactiveThresholdDays?: number
+      removeAccountsBelowDiskFreePercentage?: number
+}
+
+export interface WindowsInformationProtectionAppRule {
+      title?: string
+      mode?: WindowsInformationProtectionAppRuleMode
+      template?: WindowsInformationProtectionAppRuleTemplate
+}
+
+export interface WindowsInformationProtectionAppRuleTemplate {
+}
+
+export interface WindowsInformationProtectionCorporateNetworkLocation {
+      name?: string
+      protectedLocation?: WindowsInformationProtectionProtectedLocation
+}
+
+export interface WindowsInformationProtectionProtectedLocation {
+}
+
+export interface WindowsInformationProtectionDataRecoveryCertificate {
+      dataRecoveryCertificate?: number
+      certificateFileName?: string
+}
+
+export interface WindowsInformationProtectionAppRuleStoreAppTemplate extends WindowsInformationProtectionAppRuleTemplate {
+      publisher?: string
+      productName?: string
+}
+
+export interface WindowsInformationProtectionAppRuleDesktopTemplate extends WindowsInformationProtectionAppRuleTemplate {
+      publisher?: string
+      productName?: string
+      binaryName?: string
+      version?: string
+      versionCondition?: WindowsInformationProtectionAppRuleDesktopVersionCondition
+}
+
+export interface WindowsInformationProtectionAppRuleAppLockerPolicyFileTemplate extends WindowsInformationProtectionAppRuleTemplate {
+      payloadFileName?: string
+      payload?: number
+}
+
+export interface WindowsInformationProtectionProtectedLocationEnterpriseCloudResources extends WindowsInformationProtectionProtectedLocation {
+      values?: [EnterpriseCloudResource]
+}
+
+export interface EnterpriseCloudResource {
+      address?: string
+      proxyServerUri?: string
+}
+
+export interface WindowsInformationProtectionProtectedLocationEnterpriseIPv6Ranges extends WindowsInformationProtectionProtectedLocation {
+      ranges?: [IPv6Range]
+}
+
+export interface IPv6Range {
+      lowerAddress?: string
+      upperAddress?: string
+}
+
+export interface WindowsInformationProtectionProtectedLocationEnterpriseIPv4Ranges extends WindowsInformationProtectionProtectedLocation {
+      ranges?: [IPv4Range]
+}
+
+export interface IPv4Range {
+      lowerAddress?: string
+      upperAddress?: string
+}
+
+export interface WindowsInformationProtectionProtectedLocationEnterpriseInternalProxyServers extends WindowsInformationProtectionProtectedLocation {
+      proxyServerUris?: [string]
+}
+
+export interface WindowsInformationProtectionProtectedLocationEnterpriseProxyServers extends WindowsInformationProtectionProtectedLocation {
+      proxyServerUris?: [string]
+}
+
+export interface WindowsInformationProtectionProtectedLocationEnterpriseNetworkDomainNames extends WindowsInformationProtectionProtectedLocation {
+      ipAddressesOrFqdns?: [string]
+}
+
+export interface WindowsInformationProtectionProtectedLocationNeutralResources extends WindowsInformationProtectionProtectedLocation {
+      ipAddressesOrFqdns?: [string]
+}
+
 export interface WindowsUpdateInstallScheduleType {
 }
 
@@ -4188,11 +4514,6 @@ export interface NumberRange {
       upperNumber?: number
 }
 
-export interface IPv4Range {
-      lowerAddress?: string
-      upperAddress?: string
-}
-
 export interface VpnRoute {
       destinationPrefix?: string
       prefixSize?: number
@@ -4202,55 +4523,6 @@ export interface VpnDnsRule {
       name?: string
       servers?: [string]
       proxyServerUri?: string
-}
-
-export interface HardwareInformation {
-      serialNumber?: string
-      totalStorageSpace?: number
-      freeStorageSpace?: number
-      imei?: string
-      meid?: string
-      manufacturer?: string
-      model?: string
-      phoneNumber?: string
-      subscriberCarrier?: string
-      cellularTechnology?: string
-      wifiMac?: string
-      operatingSystemLanguage?: string
-}
-
-export interface DeviceActionResult {
-      actionName?: string
-      actionState?: DeviceActionState
-      startDateTime?: string
-      lastUpdatedDateTime?: string
-}
-
-export interface DeviceOperatingSystemSummary {
-      androidCount?: number
-      iosCount?: number
-      macOSCount?: number
-      windowsMobileCount?: number
-      windowsCount?: number
-}
-
-export interface LocateDeviceActionResult extends DeviceActionResult {
-      deviceLocation?: DeviceGeoLocation
-}
-
-export interface DeviceGeoLocation {
-      lastCollectedDateTimeUtc?: string
-      longitude?: number
-      latitude?: number
-      altitude?: number
-      horizontalAccuracy?: number
-      verticalAccuracy?: number
-      heading?: number
-      speed?: number
-}
-
-export interface ResetPasscodeActionResult extends DeviceActionResult {
-      passcode?: string
 }
 
 export interface DeviceManagementExchangeAccessRule {
@@ -4288,24 +4560,6 @@ export interface ManagedAppPolicyDeploymentSummaryPerApp {
 export interface KeyValuePair {
       name?: string
       value?: string
-}
-
-export interface ManagedAppSummary {
-}
-
-export interface ManagedAppDeploymentSummary extends ManagedAppSummary {
-      numberOfDeployedPolicies?: number
-      numberOfFlaggedUsers?: number
-      numberOfSyncedUsersWithPolicies?: number
-      numberOfSyncedUsersWithoutPolicy?: number
-      numberOfPendingAppWipes?: number
-      numberOfFailedAppWipes?: number
-      numberOfSucceededAppWipes?: number
-      lastModifiedDateTime?: string
-      numberOfIosSyncedUsersWithoutPolicies?: number
-      numberOfIosSyncedUsersWithPolicies?: number
-      numberOfAndroidSyncedUsersWithoutPolicies?: number
-      numberOfAndroidSyncedUsersWithPolicies?: number
 }
 
 export interface RolePermission {

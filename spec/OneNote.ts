@@ -31,7 +31,7 @@ describe('OneNote', function() {
     </html>
   `
 
-  it('should should create a OneNote notebook', function() {
+  it('should create a OneNote notebook', function() {
     return getClient().api("https://graph.microsoft.com/beta/me/notes/notebooks").post(notebook).then((json) => {
         const createdNotebook = json as Notebook;
         assert.isDefined(createdNotebook.id);

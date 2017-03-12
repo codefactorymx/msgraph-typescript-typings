@@ -31,7 +31,7 @@ describe('OneNote', function() {
     </html>
   `
 
-  it('should create a OneNote notebook', function() {
+  it('Create a OneNote notebook', function() {
     return getClient().api("https://graph.microsoft.com/beta/me/notes/notebooks").post(notebook).then((json) => {
         const createdNotebook = json as Notebook;
         assert.isDefined(createdNotebook.id);
@@ -44,7 +44,7 @@ describe('OneNote', function() {
       });
   });
 
-  it('should create a OneNote section in a Notebook', function() {
+  it('Create a OneNote section in a Notebook', function() {
       return getClient().api(`https://graph.microsoft.com/beta/me/notes/notebooks/${notebook.id}/sections`).post(section).then((json) => {
         const createdSection = json as Section;
         assert.isDefined(createdSection.id);
@@ -59,7 +59,7 @@ describe('OneNote', function() {
   });
 
   
-  it('should create a OneNote page in a section with basic text content', function() {
+  it('Create a OneNote page in a section with basic text content', function() {
       return getClient()
         .api(`https://graph.microsoft.com/beta/me/notes/sections/${section.id}/pages`)
         .header("Content-Type", "text/html")
@@ -74,7 +74,7 @@ describe('OneNote', function() {
          });
   });
 
-  it('should create a OneNote page from application/xhtml+xml content and boundary headers', function() {
+  it('Create a OneNote page from application/xhtml+xml content and boundary headers', function() {
     return getClient()
         .api(`https://graph.microsoft.com/beta/me/notes/sections/${section.id}/pages`)
         .header("Content-Type", "application/xhtml+xml")
